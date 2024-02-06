@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,9 @@ Route::middleware(['auth', 'verified'])
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         //here I can add more routes for the admin
+
+        //as this is a resource controller, I don't need to give it a name
+        Route::resource('projects', ProjectController::class);
     });
 
 Route::middleware('auth')->group(function () {
