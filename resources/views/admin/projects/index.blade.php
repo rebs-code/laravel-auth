@@ -4,7 +4,7 @@
     <div class="container py-4">
         <div class="d-flex justify-content-between align-items-center">
             <h2>Project List</h2>
-            <a href="{{ route('admin.projects.create') }}" role="button" class="btn btn-primary m-2">Create a New
+            <a href="{{ route('admin.projects.create') }}" role="button" class="btn btn-primary my-2">Create a New
                 Record</a>
         </div>
 

@@ -4,7 +4,8 @@
     <div class="container py-4">
         <h2>Create a New Record</h2>
         <p>or <a href="{{ route('admin.projects.index') }}">back to Projects</a></p>
-        <form>
+        <form action="{{ route('admin.projects.store') }}" method="POST">
+            @csrf
             <div class="mb-3">
                 <label for="inputName" class="form-label">Name</label>
                 <input type="text" class="form-control" id="inputName">
