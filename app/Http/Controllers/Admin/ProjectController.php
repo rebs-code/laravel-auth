@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -37,6 +38,8 @@ class ProjectController extends Controller
 
         // create a new project with the validated data
         $project = new Project($data);
+        //create a slug from the name
+        $project->slug = Str::of($project->name)->slug('-');
 
         // save the project to the database
         $project->save();
