@@ -23,11 +23,12 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255', 'unique:projects,name'],
-            'description' => ['required', 'string'],
+            'description' => ['required', 'string', 'max:1000'],
             'tech_stack' => ['required', 'string', 'max:255'],
             'repo_link' => ['required', 'url'],
+            'live_link' => ['url', 'nullable'],
             'image' => ['url', 'nullable'],
-            'slug' => ['required', 'string', 'max:255', 'unique:projects,slug'],
+            'slug' => ['nullable', 'string', 'max:255', 'unique:projects,slug'],
         ];
     }
 }

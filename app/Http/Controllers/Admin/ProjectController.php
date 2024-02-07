@@ -32,7 +32,17 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+        //if the request is valid, I can use the validated data
+        $data = $request->validated();
+
+        // create a new project with the validated data
+        $project = new Project($data);
+
+        // save the project to the database
+        $project->save();
+
+        //redirects to index
+        return redirect()->route('admin.projects.index');
     }
 
     /**
