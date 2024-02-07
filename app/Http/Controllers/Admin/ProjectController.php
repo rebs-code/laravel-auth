@@ -45,7 +45,7 @@ class ProjectController extends Controller
         $project->save();
 
         //redirects to index
-        return redirect()->route('admin.projects.index');
+        return redirect()->route('admin.projects.index')->with('message', "$project->name project created successfully!");
     }
 
     /**
