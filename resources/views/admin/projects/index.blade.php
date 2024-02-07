@@ -1,12 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
-        <ul>
-            @foreach ($projects as $project)
-                <li>{{ $project->name }}</li>
-            @endforeach
-        </ul>
+    <div class="container py-4">
         <table class="table-striped-columns table table-dark">
             <thead>
                 <tr>
@@ -25,7 +20,8 @@
                         <td>{{ $project->repo_link }}</td>
                         <td>{{ $project->slug }}</td>
                         <td>
-                            <a href="" role="button" class="btn btn-primary btn-sm me-2">Show</a>
+                            <a href="{{ route('admin.projects.show', $project) }}" role="button"
+                                class="btn btn-primary btn-sm me-2">Show</a>
                             <a href="" role="button" class="btn btn-info btn-sm me-2 text-white">Edit</a>
                             <a href="" role="button" class="btn btn-danger btn-sm">Delete</a>
                         </td>

@@ -31,7 +31,7 @@ Route::middleware(['auth', 'verified'])
         //here I can add more routes for the admin
 
         //as this is a resource controller, I don't need to give it a name
-        Route::resource('projects', ProjectController::class);
+        Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
     });
 
 Route::middleware('auth')->group(function () {
