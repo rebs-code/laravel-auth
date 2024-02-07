@@ -10,22 +10,25 @@
         <table class="table-striped-columns table table-dark">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Project Name</th>
                     <th scope="col">Tech Stack</th>
-                    <th scope="col">Repo Link</th>
+                    <th scope="col" class="col-3">Repo Link</th>
                     <th scope="col">Slug</th>
-
+                    <th scope="col" class="col-2">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($projects as $project)
                     <tr>
-                        <th scope="row">1</th>
                         <td>{{ $project->name }}</td>
                         <td>{{ $project->tech_stack }}</td>
                         <td>{{ $project->repo_link }}</td>
                         <td>{{ $project->slug }}</td>
+                        <td>
+                            <a href="" role="button" class="btn btn-primary btn-sm me-2">Show</a>
+                            <a href="" role="button" class="btn btn-info btn-sm me-2 text-white">Edit</a>
+                            <a href="" role="button" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
                     </tr>
                 @endforeach
 
