@@ -22,37 +22,38 @@
             {{-- input name --}}
             <div class="mb-3">
                 <label for="inputName" class="form-label">Name</label>
-                <input type="text" class="form-control" id="inputName" name="name">
+                <input type="text" class="form-control" id="inputName" name="name" value="{{ old('name') }}">
             </div>
             {{-- input description --}}
             <div class="mb-3">
                 <label for="descriptionArea" class="form-label">Project Description</label>
-                <textarea class="form-control" id="descriptionArea" rows="3" name="description"></textarea>
+                <textarea class="form-control" id="descriptionArea" rows="3" name="description">{{ old('description') }}</textarea>
             </div>
             {{-- input tech stack --}}
             <div class="mb-3">
                 <label for="inputStack" class="form-label">Tech Stack</label>
-                <input type="text" class="form-control" id="inputStack" name="tech_stack">
+                <input type="text" class="form-control" id="inputStack" name="tech_stack"
+                    value="{{ old('tech_stack') }}">
             </div>
             {{-- input repo link --}}
             <div class="mb-3">
                 <label for="inputRepo" class="form-label">Repo Link</label>
-                <input type="text" class="form-control" id="inputRepo" name="repo_link">
+                <input type="text" class="form-control" id="inputRepo" name="repo_link" value="{{ old('repo_link') }}">
             </div>
             {{-- input live link --}}
             <div class="mb-3">
                 <label for="inputLive" class="form-label">Live Link</label>
-                <input type="text" class="form-control" id="inputLive" name="live_link">
+                <input type="text" class="form-control" id="inputLive" name="live_link" value="{{ old('live_link') }}">
             </div>
             {{-- input slug --}}
             <div class="mb-3">
                 <label for="inputSlug" class="form-label">Slug</label>
-                <input type="text" class="form-control" id="inputSlug" name="slug">
+                <input type="text" class="form-control" id="inputSlug" name="slug" value="{{ old('slug') }}">
             </div>
             {{-- input image --}}
             <div class="mb-3">
                 <label for="inputImage" class="form-label">Image</label>
-                <input class="form-control" type="text" id="inputImage" name="image">
+                <input class="form-control" type="text" id="inputImage" name="image" value="{{ old('image') }}">
             </div>
             {{-- button to submit --}}
             <button type="submit" class="btn btn-primary">Submit</button>

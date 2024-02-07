@@ -6,12 +6,14 @@
         {{-- add toast if record created successfully --}}
         @if (session('message'))
             <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                {{-- adding class show --}}
                 <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="toast-header">
                         <strong class="me-auto">Create</strong>
                         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>
                     <div class="toast-body">
+                        {{-- the message is taken from the controller --}}
                         {{ session('message') }}
                     </div>
                 </div>
