@@ -11,7 +11,7 @@ class StoreProjectRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class StoreProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'string', 'max:255', 'unique:projects,name'],
+            'description' => ['required', 'string'],
+            'tech_stack' => ['required', 'string', 'max:255'],
+            'repo_link' => ['required', 'url'],
+            'image' => ['url', 'nullable'],
+            'slug' => ['required', 'string', 'max:255', 'unique:projects,slug'],
         ];
     }
 }
